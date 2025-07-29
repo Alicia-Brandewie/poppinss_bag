@@ -8,7 +8,23 @@
 
 <body>
         <h1>Add a new item to your bag here</h1>
-        <button type="submit">Add item</button>
+
+         <form  action="/users/<%= user._id %>/items" method="POST">
+
+            <label for="item">Item:</label>
+            <input type="text" name="item" id="item" />
+
+            <label for="location">Location: </label>
+            <input type="text" name="location" id="location" />
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" id="quantity" />
+
+            <label for="notes">Notes: </label>
+            <input type="text" name="notes" id="notes" />
+
+            <button type="submit">Add</button>
+         </form>
 
 </body>
 

@@ -64,11 +64,15 @@ app.get("/", async (req, res) => {
 });
 
 
-app.get("/", async (req,res) => {
-    res.render("display-items.ejs", { user: req.session.user, })   
+// app.get("/", async (req,res) => {
+//     res.render("display-items.ejs", { user: req.session.user, })   
+// });
+
+
+
+app.get("/new", async (req,res) => {
+    res.render("new.ejs", { user: req.session.user, })   
 });
-
-
 
 
 /*-------------------- Port ---------------------*/
