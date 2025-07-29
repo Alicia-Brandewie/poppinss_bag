@@ -1,28 +1,17 @@
-<!-- views/index.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
+    <title>Poppins's Bag</title>
   </head>
   <body>
-    <% if (user) { %>
+    <h1>Poppins's Bag</h1>
 
-    <h1>Welcome to the app, <%= user.username %>!</h1>
-    <p> 
-      <a href="/auth/sign-out">Sign out</a>
-    </p>
-    <% } else { %>
-    <h1>Welcome to the app, guest.</h1>
-    <p>
-      <a href="/auth/sign-in">sign in</a> or <a href="/auth/sign-up">sign up</a>
-    </p>
-    </p>
+    <h2> The ever-expanding catalog for organizing all your event supplies & coordinating with other hosts</h2>
 
-    <% } %>
-    <p><a href="/vip-lounge">Get into the VIP Users Only lounge!</a>
+    <button type="submit"><a href="/auth/sign-in">Sign in</button>
 
+    <button type="submit"><a href="/auth/sign-up">Sign up</button>
   </body>
 </html>
