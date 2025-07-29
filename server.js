@@ -44,15 +44,28 @@ app.use(
 
 app.use(passUserToView);
 app.use("/auth", authController); 
-app.use(isSignedIn);// may need to modify this later with multiple users (see cookbook lab)
+//app.use(isSignedIn);// may need to modify this later with multiple users (see cookbook lab)
   //YUP -- already having issue where everything is coming back to the sign-in/no homepage
-app.use('/users/:userId/items', itemsController);
+app.use('/users/:usersId/items', isSignedIn, itemsController)
+  //this by itself didn't fix it....
+//app.use('/users/:userId/items', itemsController);
 
 
 
 /*-------------------- Routes ---------------------*/
+ //GET_landing page
+
+app.get("/", async (req, res) => {
+  if (req.session.user) {
+    res.redirect(`/users/${req.session.user._id}/items`);
+  } else {
+    res.render("/");
+  }
+});
+
+
 app.get("/", async (req,res) => {
-    res.render("index.ejs", { user: req.session.user, })   
+    res.render("display-items.ejs", { user: req.session.user, })   
 });
 
 
