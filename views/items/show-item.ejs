@@ -20,7 +20,10 @@
          <% if (addedItem.notes) { %>
         <p>Notes: <%= addedItem.notes %></p>
         <% } %>
-
+        
+        <form action="/users/<%= user._id %>/items/<%= addedItem._id %>?_method=DELETE"
+        method="POST">
+          <button  type="submit">Delete this item</button></form>
         
 
 </body>

@@ -93,6 +93,23 @@ router.get('/:catalogId/edit', async (req, res) => {
 
 /*-------------------- DELETE _ Router logic ---------------------*/
 
+//DELETE_remove addedItem
+
+router.delete('/:catalogId' , async(req,res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id); 
+            //find current user from req.session
+        currentUser.catalog = currentUser.catalog.filter(item => item._id.toString() !== req.params.catalogId);
+            //use .deleteOne() via id supplied by req.params
+    await currentUser.save(); 
+        //save changes to the user
+        res.redirect(`/users/${currentUser._id}/items`);    
+            //redirect to the index view
+    } catch (error) { //if any errors...
+        console.log(error);
+        res.redirect('/');
+    }
+});
 
 /*-------------------- Module ---------------------*/
 module.exports = router;
