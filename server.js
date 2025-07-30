@@ -65,7 +65,7 @@ app.get("/", async (req, res) => {
 
 
 // app.get("/", async (req,res) => {
-//     res.render("display-items.ejs", { user: req.session.user, })   
+//     res.render("display-catalog.ejs", { user: req.session.user, })   
 // });
 
 

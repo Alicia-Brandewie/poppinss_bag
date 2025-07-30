@@ -10,7 +10,7 @@ const itemsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-quantity: {
+  quantity: {
     type: Number,
   },
   notes: {

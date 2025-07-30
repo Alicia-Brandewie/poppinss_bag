@@ -12,7 +12,7 @@ router.post ('/', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
     currentUser.catalog.push(req.body);
     await currentUser.save();
-    res.redirect(`/user/${currentUser._id}/items`);
+    res.redirect(`/users/${currentUser._id}/items`);
     } catch (error) {
         console.log(error);
         res.redirect('/');
@@ -27,7 +27,7 @@ router.post ('/', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
-        res.render('items/display-items.ejs', {
+        res.render('items/display-catalog.ejs', {
             catalog: currentUser.catalog,
         });
     } catch (error) {
@@ -41,7 +41,10 @@ router.get('/new', async (req,res) =>{
     res.render('items/new.ejs')
 });
 
-//GET_to reveal items.display-items.ejs 
+
+
+
+
 
 /*-------------------- UPDATE _ Router logic ---------------------*/
 
