@@ -8,6 +8,7 @@
     </title>
 </head>
 <body>
+        <form action="/users/<%= user._id %>/items/<%= addedItem._id %>?_method=PUT" method="POST">
 
         <h1>Edit <%= addedItem.name %></h1>
 
@@ -21,7 +22,8 @@
         <p>Notes: <%= addedItem.notes %></p>
         <% } %>
 
-        
+        <button type ="submit">Update item</button>
+        </form>
 
 </body>
 

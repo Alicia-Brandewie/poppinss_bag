@@ -23,7 +23,13 @@
         
         <form action="/users/<%= user._id %>/items/<%= addedItem._id %>?_method=DELETE"
         method="POST">
-          <button  type="submit">Delete this item</button></form>
+          <button  type="submit">Delete this item</button>
+        </form>
+          
+          <a href="/users/<%= user._id %>/items/<%= addedItem._id %>/edit">
+        <p>Edit this recipe</p> 
+        </a>
+
         
 
 </body>

@@ -63,10 +63,11 @@ router.get('/:catalogId/edit', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id); //find current user
         const catalog = currentUser.catalog.id(req.params.catalogId);//find clicked item//
-        res.render('/items/edit.ejs', {
+        res.render('items/edit.ejs', {
             addedItem: catalog,
         });       //send change//
-        res.redirect(`/users/${currentUser._id}/items/${req.catalogId}`);
+        //res.redirect(`/users/${currentUser._id}/items/${req.catalogId}`);
+            //having both the res.render & res.redirect was causing the " 'ERR_HTTP_HEADERS_SENT'" issue
     } catch (error) {
         console.log(error);
         res.redirect('/');
@@ -76,19 +77,20 @@ router.get('/:catalogId/edit', async (req, res) => {
 
 
 /*-------------------- UPDATE _ Router logic ---------------------*/
-//PUT_edited item into DB
-// router.get('/', async (req, res) => {
-//     try {
-//         const currentUser = await User.findById(req.session.user._id); //find current user
-//         const catalog = currentUser.catalog.id(req.params.catalogId);//find clicked item//
-//         catalog.set(req.body);
-//         await currentUser.save();        //send change//
-//         res.redirect(`/users/${currentUser._id}/items/${req.catalogId}`);
-//     } catch (error) {
-//         console.log(error);
-//         res.redirect('/');
-//     }
-// });
+// //PUT_edited item into DB
+router.put('/:catalogId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id); //find current user
+        const catalog = currentUser.catalog.id(req.params.catalogId);//find clicked item//
+        catalog.set(req.body);
+        await currentUser.save();        //send change//
+        res.redirect(`/users/${currentUser._id}/items/${req.params.catalogId}`        
+        );
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
 
 
 /*-------------------- DELETE _ Router logic ---------------------*/
