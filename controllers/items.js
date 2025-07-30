@@ -65,9 +65,7 @@ router.get('/:catalogId/edit', async (req, res) => {
         const catalog = currentUser.catalog.id(req.params.catalogId);//find clicked item//
         res.render('items/edit.ejs', {
             addedItem: catalog,
-        });       //send change//
-        //res.redirect(`/users/${currentUser._id}/items/${req.catalogId}`);
-            //having both the res.render & res.redirect was causing the " 'ERR_HTTP_HEADERS_SENT'" issue
+        });       
     } catch (error) {
         console.log(error);
         res.redirect('/');

@@ -1,0 +1,11 @@
+<nav>
+
+<%if (user){%>
+    <a href="/users/<%=user._id%>/items">My Bag</a> 
+    <a href="/auth/sign-out"> Sign out</a> 
+<% }  else {%>
+    <a href="/auth/sign-in">Sign in</a> 
+    <a href="/auth/sign-up">Sign up</a> 
+<%}%>
+
+</nav>
