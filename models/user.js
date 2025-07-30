@@ -30,9 +30,6 @@ const userSchema = new mongoose.Schema({
   catalog: [itemsSchema]
 });
 
-
-
-
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;

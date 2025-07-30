@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosts</title>
+</head>
+<body>
+            <%- include('../partials/_navbar.ejs') %>
+
+    <h2> In every job that must be done, there is an element of fun. You find the fun, and - SNAP - the job's a game!</h2>
+    <h1>And you found the fun: our other hosts!</h1>
+    <ul>
+    <% users.forEach(user =>{ %>
+        <li>
+        <a href="/allUsers/display-catalog/<%= user._id %>">
+        <%= user.username %>
+        </a>
+        </li>
+   <% }); %>
+   </ul>
+</body>
+
+</html>
