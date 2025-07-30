@@ -18,6 +18,34 @@ const itemsSchema = new mongoose.Schema({
   },
 });
 
+const eventsSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  location: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: String,
+    required: true,
+  },
+  theme: {
+    type: Number,
+  },
+    items: [itemsSchema],
+  cohost: {
+    type: String,
+  },
+  guests: {
+    type: String,
+  },
+  notes: {
+    type: String,
+  },
+});
+
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -27,7 +55,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  catalog: [itemsSchema]
+  catalog: [itemsSchema],
+  calendar: [eventsSchema],
 });
 
 const User = mongoose.model("User", userSchema);

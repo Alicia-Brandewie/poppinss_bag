@@ -13,6 +13,7 @@ const session = require('express-session');
 const authController = require('./controllers/auth.js');
 const itemsController = require('./controllers/items.js');
 const allUsersController = require('./controllers/allUsers.js');
+const eventsController = require('./controllers/events.js');
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
@@ -46,12 +47,9 @@ app.use(
 
 app.use(passUserToView);
 app.use("/auth", authController); 
-//app.use(isSignedIn);// may need to modify this later with multiple users (see cookbook lab)
-  //YUP -- already having issue where everything is coming back to the sign-in/no homepage
-app.use('/users/:usersId/items', isSignedIn, itemsController)
-  //this by itself didn't fix it....//cause for multiple USERS, so come back to this soon
-app.use('/allUsers', isSignedIn, allUsersController); // for multiple users
-
+app.use('/users/:usersId/items', isSignedIn, itemsController);
+app.use('/users/:usersId/events', isSignedIn, eventsController);
+app.use('/allUsers', isSignedIn, allUsersController);
 
 
 /*-------------------- Routes ---------------------*/
@@ -64,12 +62,6 @@ app.get("/", async (req, res) => {
     res.render("/");
   }
 });
-
-
-// app.get("/", async (req,res) => {
-//     res.render("display-catalog.ejs", { user: req.session.user, })   
-// });
-
 
 
 app.get("/new", async (req,res) => {

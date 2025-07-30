@@ -5,7 +5,6 @@ const User = require('../models/user.js');
 
 /*-------------------- CREATE _ Router logic ---------------------*/
 
-
 //POST_ new item
 router.post('/', async (req, res) => {
     try {
@@ -18,8 +17,6 @@ router.post('/', async (req, res) => {
         res.redirect('/');
     }
 });
-
-
 
 /*-------------------- READ _ Router logic ---------------------*/
 
@@ -40,8 +37,6 @@ router.get('/', async (req, res) => {
 router.get('/new', async (req, res) => {
     res.render('items/new.ejs')
 });
-
-
 
 //GET_to show-item.ejs
 router.get('/:itemId', async (req, res) => {
