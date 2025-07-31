@@ -97,5 +97,22 @@ router.put('/:calendarId', async (req, res) => {
 
 // ---------------------- DELETE ---------------------//
 
+//DELETE_remove addedItem
+
+router.delete('/:calendarId' , async(req,res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id); 
+            //find current user from req.session
+        currentUser.calendar = currentUser.calendar.filter(event => event._id.toString() !== req.params.calendarId);
+            //use .deleteOne() via id supplied by req.params
+    await currentUser.save(); 
+        //save changes to the user
+        res.redirect(`/users/${currentUser._id}/events`);    
+            //redirect to the index view
+    } catch (error) { //if any errors...
+        console.log(error);
+        res.redirect('/');
+    }
+});
 /*-------------------- Module ---------------------*/
 module.exports = router;
