@@ -27,17 +27,14 @@
             <input type="text" name="theme" id="theme" />
 
             <label for="items">Items*: </label>
-            <select name="items" id="items" multiple required>
+            <textarea name="items" id="notes"></textarea>
+            <!-- <select name="items" id="items" multiple required>
                 
-                <% catalog.forEach(item=>{ %>
-                <option value = "<%= item.name %>">
-                <%= item.name %></option>
-                <% }) %>
-
-                <option value="X">X</option>
-                <option value="Y">Y</option>
-                <option value="Z">Z</option>
-            </select>
+                <#% catalog.forEach(item=>{ %>
+                <option value = "<#%= item.name %>">
+                <#%= item.name %></option>
+                <#% }) %>
+            </select> -->
 
             <label for="guests">Guests' names: </label>
             <input type="text" name="guests" id="guests" />

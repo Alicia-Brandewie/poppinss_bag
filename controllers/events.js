@@ -44,28 +44,23 @@ router.get("/", async (req,res) => { // using single / because base route for th
 
 
 //GET_ new event
+
 router.get('/new', async (req, res) => {
-//                 res.render('events/new.ejs');
+        res.render('events/new.ejs');
+})
+
+// router.get('/new', async (req, res) => {
+//     try {
+//             const currentUser = await User.findById(req.session.user._id);
+//             console.log(currentUser);
+//                 res.render('events/new.ejs', {catalog:currentUser.catalog})
+//     } catch (error) {
+//             console.log(error);
+//             res.redirect('/');
+//     }        
 // });
-
-
-    try {
-//     //     router.get('/:itemId', async (req, res) => {
-            const currentUser = await User.findById(req.session.user._id);
-            console.log(currentUser);
-//     //         const showItem = currentUser.catalog.id(req.params.itemId);
-                res.render('events/new.ejs', {catalog:currentUser.catalog})
-//                 //     , {
-//                 //     addedItem: showItem,
-//                 // }
-//         //     );
-        // });
-    } catch (error) {
-            console.log(error);
-            res.redirect('/');
-    }        
-});
 // ^Glen helped; I'd over engineered it
+    //PIN IN IT until fully passing project 2, then stretch stretch for it
 
 
 //GET_to show-event.ejs
