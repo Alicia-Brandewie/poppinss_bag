@@ -9,23 +9,23 @@ const User = require('../models/user.js');
 // ---------------------- READ ---------------------//
 
 //GET_calendar
-// router.get("/calendar", async (req,res) => {
-//     try {
-//     const currentUser = await User.findById(req.session.user._id);
-//     res.render("events/calendar.ejs", {
-//         calendar: currentUser.calendar,
-//     });
-//     } catch (error) {
-//     console.log(error);
-//     res.redirect('/');
-//     }
-// });
-
-
-router.get("/calendar", async (req,res) => {
+router.get("/", async (req,res) => { // using single / because base route for this controller 
+    try {
     const currentUser = await User.findById(req.session.user._id);
-    res.render("events/calendar/ejs");
+    res.render("events/calendar.ejs", {
+        calendar: currentUser.calendar,
+    });
+    } catch (error) {
+    console.log(error);
+    res.redirect('/');
+    }
 });
+
+
+// router.get("/calendar", async (req,res) => {
+//     const currentUser = await User.findById(req.session.user._id);
+//     res.render("events/calendar.ejs");
+// });
 
 // ---------------------- UPDATE ---------------------//
 // ---------------------- DELETE ---------------------//
