@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title> Add Event  </title>
+</head>
+
+<body>
+        <%- include('../partials/_navbar.ejs') %>
+
+        <h1>Add a new event to your calendar here</h1>
+
+        <form action="/users/<%= user._id %>/events method="POST">
+
+            <label for="name">Name*:</label>
+            <input type="text" name="name" id="name" />
+
+            <label for="location">Location*: </label>
+            <input type="text" name="location" id="location" />
+
+            <label for="date">Date:</label>
+            <input type="number" name="string" id="string" />
+
+            <label for="theme">Theme: </label>
+            <input type="text" name="theme" id="theme" />
+
+            <label for="items">Items*: </label>
+            <input type="text" name="items" id="items" />
+
+            <label for="guests">Guests: </label>
+            <input type="text" name="notes" id="notes" />
+
+
+            <label for="notes">Notes: </label>
+            <input type="text" name="notes" id="notes" />
+
+            <button type="submit">Add</button>
+        </form>
+
+</body>
+
+</html>

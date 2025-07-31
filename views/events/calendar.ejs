@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>
         <%= user.username %>'s Events
     </title>
@@ -12,7 +13,9 @@
         <%- include('../partials/_navbar.ejs') %>
 
         <h1>Look at all the scrumdiddlyumptious  events on your calendar, <%= user.username %>!</h1>
-     <ul>
+        <button type="submit"><a href="/users/<%=user._id%>/events/new">Add event</a></button>
+
+        <ul>
             <% calendar.forEach(event=>{ %>
                 <li>
                     <a href="/users/<%= user._id %>/events/<%= event_id %>">
