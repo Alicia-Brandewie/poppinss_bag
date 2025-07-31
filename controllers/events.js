@@ -85,7 +85,7 @@ router.put('/:calendarId', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id); //find current user
         const calendar = currentUser.calendar.id(req.params.calendarId);//find clicked item//
-        calander.set(req.body);
+        calendar.set(req.body);
         await currentUser.save();        //send change//
         res.redirect(`/users/${currentUser._id}/events/${req.params.calendarId}`        
         );

@@ -8,11 +8,12 @@
         <%= addedEvent.name %>  
     </title>
 </head>
+        <%- include('../partials/_navbar.ejs') %>
 
 
- <form action="/users/<%= user._id %>/events<%= addedEvent._id %>?_method=PUT" method="POST">
-                <button type ="submit">Update item</button>
-                
+ <form action="/users/<%= user._id %>/events/<%= addedEvent._id %>?_method=PUT" method="POST">
+                <button type ="submit">Update event</button>
+
 <h1>Edit <%= addedEvent.name %></h1>
 
         <p>name: <%= addedEvent.name%></p>
