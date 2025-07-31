@@ -11,8 +11,11 @@
 
 
  <form action="/users/<%= user._id %>/events<%= addedEvent._id %>?_method=PUT" method="POST">
+                <button type ="submit">Update item</button>
+                
+<h1>Edit <%= addedEvent.name %></h1>
 
-        <h1>Edit <%= addedEvent.name %></h1>
+        <p>name: <%= addedEvent.name%></p>
 
         <p>Location: <%= addedEvent.location %></p>
 
@@ -32,7 +35,12 @@
         <p>Notes: <%= addedEvent.notes %></p>
         <% } %>
 
-        <button type ="submit">Update item</button>
+        
+        </form>
+
+        <form action="/users/<%= user._id %>/events/<%= addedEvent._id %>?_method=DELETE"
+        method="POST">
+          <button  type="submit">Delete this event</button>
         </form>
 
 </body>

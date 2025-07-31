@@ -50,35 +50,51 @@ router.get('/new', async (req, res) => {
 
 
 //GET_to show-event.ejs
-// router.get('/:eventId', async (req, res) => {
-//     try {
-//         const currentUser = await User.findById(req.session.user._id);
-//         const showItem = currentUser.calendar.id(req.params.eventId);
-//         res.render('events/show-event.ejs', {
-//             addedEvent: showEvent,
-//         });
-//     } catch (error) {
-//         console.log(error);
-//         res.redirect('/');
-//     }
-// });
+router.get('/:eventId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const showEvent = currentUser.calendar.id(req.params.eventId);
+        res.render('events/show-event.ejs', {
+            addedEvent: showEvent,
+        });
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
 
 
-//GET_item to edit
-// router.get('/:calendarId/edit', async (req, res) => {
-//     try {
-//         const currentUser = await User.findById(req.session.user._id); //find current user
-//         const catalog = currentUser.calendar.id(req.params.calendarId);//find clicked item//
-//         res.render('events/edit.ejs', {
-//             addedEvent: calendar,
-//         });       
-//     } catch (error) {
-//         console.log(error);
-//         res.redirect('/');
-//     }
-// });
+//GET_event to edit
+router.get('/:calendarId/edit', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id); //find current user
+        const calendar = currentUser.calendar.id(req.params.calendarId);//find clicked item//
+        res.render('events/edit.ejs', {
+            addedEvent: calendar,
+        });       
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
 
 // ---------------------- UPDATE ---------------------//
+
+// //PUT_edited event into DB
+router.put('/:calendarId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id); //find current user
+        const calendar = currentUser.calendar.id(req.params.calendarId);//find clicked item//
+        calander.set(req.body);
+        await currentUser.save();        //send change//
+        res.redirect(`/users/${currentUser._id}/events/${req.params.calendarId}`        
+        );
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
+
 // ---------------------- DELETE ---------------------//
 
 /*-------------------- Module ---------------------*/

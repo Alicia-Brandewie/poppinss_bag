@@ -13,7 +13,7 @@
 
         <h1><%= addedEvent.name %></h1>
 
-         <p>Location: <%= addedEvent.location %></p>
+        <p>Location: <%= addedEvent.location %></p>
 
         <p>Date: <%= addedEvent.date %></p>
 
@@ -31,6 +31,9 @@
         <p>Notes: <%= addedEvent.notes %></p>
         <% } %>
 
+          
+          <a href="/users/<%= user._id %>/events/<%= addedEvent._id %>/edit">
+        <p>Edit this event</p> 
 </body>
 
 </html>
