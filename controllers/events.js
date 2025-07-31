@@ -45,8 +45,27 @@ router.get("/", async (req,res) => { // using single / because base route for th
 
 //GET_ new event
 router.get('/new', async (req, res) => {
-    res.render('events/new.ejs')
+//                 res.render('events/new.ejs');
+// });
+
+
+    try {
+//     //     router.get('/:itemId', async (req, res) => {
+            const currentUser = await User.findById(req.session.user._id);
+            console.log(currentUser);
+//     //         const showItem = currentUser.catalog.id(req.params.itemId);
+                res.render('events/new.ejs', {catalog:currentUser.catalog})
+//                 //     , {
+//                 //     addedItem: showItem,
+//                 // }
+//         //     );
+        // });
+    } catch (error) {
+            console.log(error);
+            res.redirect('/');
+    }        
 });
+// ^Glen helped; I'd over engineered it
 
 
 //GET_to show-event.ejs
