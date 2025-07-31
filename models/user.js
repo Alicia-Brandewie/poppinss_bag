@@ -36,6 +36,8 @@ const eventsSchema = new mongoose.Schema({
   },
     items: {
     type: String,
+   // enum: [catalog.forEach(item => {
+     // "/users/user._id/items/item._id.item.name"});}
     required: true,
     },
   cohost: {
