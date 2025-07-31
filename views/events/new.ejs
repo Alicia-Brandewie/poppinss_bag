@@ -12,7 +12,7 @@
 
         <h1>Add a new event to your calendar here</h1>
 
-        <form action="/users/<%= user._id %>/events method="POST">
+        <form action="/users/<%= user._id %>/events" method="POST">
 
             <label for="name">Name*:</label>
             <input type="text" name="name" id="name" />
@@ -20,8 +20,8 @@
             <label for="location">Location*: </label>
             <input type="text" name="location" id="location" />
 
-            <label for="date">Date:</label>
-            <input type="number" name="string" id="string" />
+            <label for="date">Date*:</label>
+            <input type="text" name="date" id="date" />
 
             <label for="theme">Theme: </label>
             <input type="text" name="theme" id="theme" />
@@ -29,9 +29,8 @@
             <label for="items">Items*: </label>
             <input type="text" name="items" id="items" />
 
-            <label for="guests">Guests: </label>
-            <input type="text" name="notes" id="notes" />
-
+            <label for="guests">Guests' names: </label>
+            <input type="text" name="guests" id="guests" />
 
             <label for="notes">Notes: </label>
             <input type="text" name="notes" id="notes" />

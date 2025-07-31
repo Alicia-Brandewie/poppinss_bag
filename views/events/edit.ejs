@@ -1,1 +1,40 @@
-<link rel="stylesheet" href="/stylesheets/style.css" />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>   Edit event
+        <%= addedEvent.name %>  
+    </title>
+</head>
+
+
+ <form action="/users/<%= user._id %>/events<%= addedEvent._id %>?_method=PUT" method="POST">
+
+        <h1>Edit <%= addedEvent.name %></h1>
+
+        <p>Location: <%= addedEvent.location %></p>
+
+        <p>Date: <%= addedEvent.date %></p>
+
+        <% if (addedEvent.theme) { %>
+        <p>Theme: <%= addedEvent.theme %></p>
+        <% } %>
+
+        <p>Items <%= addedEvent.items %></p>
+
+        <% if (addedEvent.guests) { %>
+        <p>Guest list: <%= addedEvent.guests %></p>
+        <% } %>
+
+        <% if (addedEvent.notes) { %>
+        <p>Notes: <%= addedEvent.notes %></p>
+        <% } %>
+
+        <button type ="submit">Update item</button>
+        </form>
+
+</body>
+
+</html>

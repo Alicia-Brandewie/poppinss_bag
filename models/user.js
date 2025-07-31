@@ -32,9 +32,12 @@ const eventsSchema = new mongoose.Schema({
     required: true,
   },
   theme: {
-    type: Number,
+    type: String,
   },
-    items: [itemsSchema],
+    items: {
+    type: String,
+    required: true,
+    },
   cohost: {
     type: String,
   },
