@@ -60,17 +60,19 @@ app.use('/allUsers', isSignedIn, allUsersController);
  //GET_landing page
 
 app.get("/", async (req, res) => {
+    console.log("I am also here");
   if (req.session.user) {
     res.redirect(`/users/${req.session.user._id}/items`);
   } else {
-    res.render("/");
+    console.log("I am here");
+    res.render("index.ejs");
   }
 });
 
 
-app.get("/new", async (req,res) => {
-    res.render("new.ejs", { user: req.session.user, })   
-});
+// app.get("/new", async (req,res) => {
+//     res.render("new.ejs", { user: req.session.user, })   
+// });
 
 
 /*-------------------- Port ---------------------*/

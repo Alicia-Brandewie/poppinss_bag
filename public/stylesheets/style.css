@@ -1,0 +1,153 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Modak&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap');
+
+
+/* .modak-regular {
+  font-family: "Modak", system-ui;
+  font-weight: 100;
+  font-style: normal;
+} */
+
+/* .lemon-regular {
+  font-family: "Lemon", serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+.macondo-swash-caps-regular {
+  font-family: "Macondo Swash Caps", cursive, Arial;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+Body {
+    font-family: Arial;
+    background-color: whitesmoke;
+}
+
+h1, h2, h3, h4 {
+     font-family: "Macondo Swash Caps";
+}
+
+/* -------------------- Index --------------------*/
+.main-header {
+  font-weight: bold;
+  color: rgb(173, 52, 83);
+  font-size: 5em;
+  margin: 20px;
+}
+
+.sub-header {
+  margin: 0 20px 0 20px;
+  font-size: 1.4em;
+  color: rgb(198, 103, 71);
+}
+
+.index-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.auth-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 80px 0 0;
+  height: 100%;
+}
+
+.button-link {
+  text-decoration: none;
+  font-size: 1.5em;
+  padding: 8px 0;
+  border-radius: 25px;
+  width: 10em;
+  text-align: center;
+  background-color: rgb(212, 158, 68);
+}
+
+.button-link:hover {
+  background-color: rgb(37, 172, 191);
+}
+
+/* -------------------- Sign-in/Sign-up --------------------*/
+.signin-container,
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  color: rgb(173, 52, 83);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  height: 100%;
+  background-color: #f6e7e7;
+  justify-content: space-evenly;
+  padding: 30px 40px 20px 40px;
+  border-radius: 20px;
+  color: #4b598e;
+  font-weight: bold;
+}
+
+input {
+  border: 1px solid rgb(182, 182, 182);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+/* button {
+  padding: 10px;
+  background-color: # rgb(173, 52, 83);
+  color:  rgb(173, 52, 83);
+  border-radius: 30px;
+  border: none;
+  margin: 15px 0;
+  font-size: 1.1em;
+} */
+/* -------------------- Views_display-catalog --------------------*/
+
+.all-items-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-items-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 90%;
+  color:  rgb(173, 52, 83);
+}
+
+.add-item-link {
+  padding: 10px;
+  background-color: rgb(173, 52, 83);
+  color: white;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.1em;
+  padding: 2px 25px;
+  text-decoration: none;
+}
+
+.add-item-link:hover {
+  background-color: #e84a6c;

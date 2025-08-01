@@ -1,13 +1,25 @@
+<link rel="stylesheet" href="/stylesheets/partials.css" />
+
 <nav>
 
-<%if (user){%>
-    <a href="/users/<%=user._id%>/items">My Bag</a> 
-    <a href="/users/<%=user._id%>/events">My Events</a>
-    <a href="/allUsers/index">Hosts</a>
-    <a href="/sign-out">Sign out</a> 
-<% }  else {%>
-    <a href="/auth/sign-in">Sign in</a> 
-    <a href="/auth/sign-up">Sign up</a> 
-<%}%>
+    <%if (user){%>
+        <div class="navbar">
+                <a id="nav-header" href="/">Poppins's Bag</a>
 
+            <div class="nav-links">
+                <a href="/users/<%=user._id%>/items">My Bag</a>
+                <a href="/users/<%=user._id%>/events">My Events</a>
+                <a href="/allUsers/index">Hosts</a>
+                <a href="/auth/sign-out">Sign out</a>
+            </div>
+        </div>
+
+        <% } else {%>
+            <div class="navbar">
+                <div class="nav-links">
+                    <a href="/auth/sign-in">Sign in</a>
+                    <a href="/auth/sign-up">Sign up</a>
+                </div>
+            </div>
+            <%}%>
 </nav>
