@@ -7,17 +7,27 @@
     <title>Sign In</title>
   </head>
   <body>
-    <div class="signin-container">
+    <div class="text-container">
 
-    <h1>Sign into your account</h1>
-    <h2>Supercalifragilisticexpialidocious--you're back!</h2>
-    <form action="/auth/sign-in" method="POST">
+        <div class="main-header">
+         <h1>Sign into your account</h1>
+         </div>
+        
+         <div class="sub-header">
+        <h2>Supercalifragilisticexpialidocious--you're back!</h2>
+        </div>
+
+        <div class="index-container">
+
+    <form class="form" action="/auth/sign-in" method="POST">
       <label for="username">Username:</label>
       <input type="text" name="username" id="username" />
       <label for="password">Password:</label>
       <input type="password" name="password" id="password" />
-      <button type="submit">Sign in</button>
+      <button class="form-button" type="submit">Sign in</button>
     </form>
+    </div>
+
     </div>
   </body>
 </html>
