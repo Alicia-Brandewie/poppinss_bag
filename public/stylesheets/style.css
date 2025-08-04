@@ -28,82 +28,83 @@
 }
 
 Body {
-    font-family: Arial;
-    background-color: white;
-}
-
-h1, h2, h3, h4 {
-     font-family: "Rammetto One";
+  font-family: Arial;
+  background-color: white;
 }
 
 /* -------------------- Index --------------------*/
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-      align-items: center;
-
+.index-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5vw;
 }
 
 .main-header {
- display: flex;
+  display: flex;
+  font-family: "Rammetto One";
   font-weight: bold;
   font-size: 4vw;
+  margin: 1vw;
   color: rgb(214, 10, 61);
   text-align: center;
   text-shadow: 0px 10px 5px lightgrey;
 }
 
 .sub-header {
-  margin: 50px;
+  font-family: "Rammetto One";
+  margin: 1vw;
   font-size: 3vw;
   color: rgb(226, 83, 16);
   text-align: center;
-    text-shadow: 0px 10px 8px lightgrey;
-
+  text-shadow: 0px 10px 8px lightgrey;
 }
 
-.index-container {
+
+.button-link {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  height: 100%;
-
+  border: none;
+  justify-content: space-between;
 }
 
-.auth-links {
+#in:hover,
+#up:hover,
+#edit:hover, {
+  background-color: rgb(10, 171, 192);
+}
+
+#in:active,
+#up:active {
+  box-shadow: 0px 10px 8px lightgrey;
+}
+
+#in,
+#up, 
+#edit {
+  color: white;
+  font-size: 3vw;
+  padding: 1vw;
+  border-radius: 3vw;
+  width: 10em;
+  text-align: center;
+  margin: 3vw;
+  background-color: rgb(243, 209, 14);
+  border: none;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+/* -------------------- Sign-in/Sign-up --------------------*/
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
-.button-link {
-  font-size: 2vw;
-  padding: 8px 0;
-  border-radius: 25px;
-  width: 10em;
-  text-align: center;
-  margin: 1vw;
-  background-color: rgb(243, 209, 14);
-    border: none;
-    justify-content: space-between;
-      font-weight: bold;
-
-
-}
-
-.button-link:hover {
-  background-color: rgb(10, 171, 192);
-}
-
-.button-link:active {
-    box-shadow:  0px 10px 8px lightgrey;
-} 
-
-/* -------------------- Sign-in/Sign-up --------------------*/
 .signin-container,
 .signup-container {
   display: flex;
@@ -118,43 +119,50 @@ h1, h2, h3, h4 {
 form {
   display: flex;
   flex-direction: column;
-  width: 40vw;
-  height: 100%;
+  width: 30vw;
+  /* height: 100%; */
   background-color: rgb(243, 209, 14);
   justify-content: space-evenly;
-  padding: 30px 40px 20px 40px;
-  border-radius: 30px;
+  padding: 02vw 2vw;
+  border-radius: 3vw;
   color: black;
   font-weight: bold;
-  font-size: 2vw;
-  margin: 20px 20px 60px 20px;
+  font-size: 1vw;
+  margin: 1vw 1vw;
 }
 
 label {
-  font-size: 3vw;
+  font-size: 2vw;
+  padding: .5vw;
 }
 
 input {
-  padding: 12px;
-  border-radius: 30px;
+  padding: 1vw;
+  border-radius: 4vw;
   border-color: white;
+  margin: .5vw;
+  font-size: 1.8vw;
 }
 
 .form-button {
-  padding: 10px;
   background-color: white;
   color: black;
-  border-radius: 30px;
+  border-radius: 3vw;
   border: none;
-  margin: 15px 0;
-  font-size: 3vw;
+  font-size: 2vw;
   font-weight: bold;
+  margin: 1vw;
+  width: 29vw;
+  height: 4vw;
+  align-self: center;
+  margin: 1vw 0 0 0;
 }
 
 .form-textarea {
- padding: 12px;
-  border-radius: 30px;
+  padding: 1vw;
+  border-radius: 3vw;
   border-color: white;
+    margin: 0 0 1vw 0;
 }
 
 .form-button:hover {
@@ -162,68 +170,97 @@ input {
 }
 
 .form-button:active {
-    box-shadow:  8px 10px 8px white;
-} 
+  box-shadow: 8px 10px 8px antiquewhite;
+}
 
 
 /* -------------------- Views_display-catalog --------------------*/
 
 .views-header {
-     display: flex;
+  display: flex;
   font-weight: bold;
-  font-size: 2vw;
-  color:rgb(226, 83, 16);
+font-family: "Rammetto One";
+  font-size: 3vw;
+    color: rgb(226, 83, 16);
   text-align: center;
   text-shadow: 0px 10px 5px lightgrey;
-    margin: 1em;
-    align-items: center;
-        justify-content: space-between;
+  margin: 1vw 2vw;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.button{
-  font-size: 3vw;
+.add {
+  font-size: 2vw;
   border-radius: 25px;
   width: 9em;
-  height: 2em;
-  text-align: center;
+  /* height: 2.6em; */
   background-color: rgb(226, 83, 16);
-    border: none;
-    color:white;
-      font-weight: bold;
-
+  border: none;
+  color: white;
+  margin: 1vw;
+  text-shadow: none;
+  font-weight: 100;
 }
 
-.button:hover {
+.add:hover {
   background-color: rgb(10, 171, 192);
 }
 
-/* .button:active {
+.add:active {
     box-shadow:  0px 10px 8px lightgrey;
-}  */
+} 
 
 .all-items {
-     display: flex;
+  display: flex;
+  flex-wrap: wrap;
   font-weight: bold;
   font-size: 3vw;
   text-align: center;
-  text-shadow: 0px 10px 5px lightgrey;
-    margin: 1em;
-    align-items: center;
-        justify-content: space-between;
+  /* text-shadow: 0px 10px 5px lightgrey; */
+  margin: 1em;
+  align-content: space-between;
+  justify-content: center;
+  width: 90vw;
 }
 
 .individual-item {
-    padding: 10px;
+  padding: 10px;
   /* background-image: linear-gradient(to right, #d60a3d,  #e25310, #f3d10e); */
- /* background image = no hoover? we sure? */
-  background-color: rgb(243, 209, 14) ;
+  /* background image = no hoover? we sure? */
+  background-color: rgb(243, 209, 14);
   color: white;
   border-radius: 25px;
   border: none;
-    font-size: 2vw;
- padding: 1vw;
+  font-size: 2vw;
+  padding: 1vw;
+  margin: .5vw;
 }
 
 .individual-item:hover {
   background-color: rgb(10, 171, 192);
 }
+
+.individual-item:active {
+    box-shadow:  0px 10px 8px lightgrey;
+} 
+
+
+
+/* -------------------- Views_display-catalog, _show-event--------------------*/
+
+.form-dupe {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  /* height: 100%; */
+  background-color: rgb(243, 209, 14);
+  justify-content: space-evenly;
+  padding: 02vw 2vw;
+  border-radius: 3vw;
+  color: white;
+  font-weight: bold;
+  font-size: 2vw;
+  margin: 1vw 1vw;
+}
+
+/* -------------------- Views_item_edit, _events_edit--------------------*/

@@ -11,19 +11,22 @@
 
 <body>
         <%- include('../partials/_navbar.ejs') %>
+<div class="views-header">
+        <p>Look at all the scrumdiddlyumptious  events on your calendar, <%= user.username %>!</p>
+        <a class=add href="/users/<%=user._id%>/events/new">Add event</a>
 
-        <h1>Look at all the scrumdiddlyumptious  events on your calendar, <%= user.username %>!</h1>
-        <button type="submit"><a href="/users/<%=user._id%>/events/new">Add event</a></button>
+</div>
 
-        <ul>
-            <% calendar.forEach(event=>{ %>
-                <li>
-                    <a href="/users/<%= user._id %>/events/<%= event._id %>">
+
+            <div class="all-items">
+                    <% calendar.forEach(event=>{ %>
+                
+                    <a class="individual-item" href="/users/<%= user._id %>/events/<%= event._id %>">
                         <%= event.name %>
                     </a>
-                </li>
+                
                 <% }) %>
-        </ul>
+            </div>
 
 
 </body>

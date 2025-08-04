@@ -12,25 +12,23 @@
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
-        <div class="all-items-body">
+        <!-- <div class="all-items-body"> -->
 
             <div class="views-header">
 
-                <h1>Look at all the magical things in your bag, <%= user.username %>!</h1>
-                <button  class=button type="submit"><a class=button href="/users/<%=user._id%>/items/new">Add item</a></button>
+                <p>Look at all the magical things in your bag, <%= user.username %>!</p>
+                <a class=add href="/users/<%=user._id%>/items/new">Add item</a>
             </div>
 
             <div class="all-items">
-          
                 <% catalog.forEach(item=>{ %>
                         <a  class="individual-item" href="/users/<%= user._id %>/items/<%= item._id %>">
                             <%= item.name %>
                         </a>
                     <% }) %>
-                
             </div>
 
-        </div>
+        <!-- </div> -->
 </body>
 
 </html>
