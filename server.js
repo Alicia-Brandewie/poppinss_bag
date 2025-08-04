@@ -60,11 +60,11 @@ app.use('/allUsers', isSignedIn, allUsersController);
  //GET_landing page
 
 app.get("/", async (req, res) => {
-    console.log("I am also here");
+    // console.log("I am also here");
   if (req.session.user) {
     res.redirect(`/users/${req.session.user._id}/items`);
   } else {
-    console.log("I am here");
+    // console.log("I am here");
     res.render("index.ejs");
   }
 });

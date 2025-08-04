@@ -10,3 +10,8 @@ https://generalassembly.instructure.com/courses/821/pages/men-stack-embedding-re
             https://www.w3schools.com/tags/att_select_multiple.asp
             https://www.w3schools.com/tags/att_select_required.asp
     Glen helped me when I got turned around, "lost in the sauce", over enginered this
+
+
+### Navbar styling
+https://www.w3schools.com/css/css3_gradients.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient

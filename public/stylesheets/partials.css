@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
 
-.macondo-swash-caps-regular {
-  font-family: "Macondo Swash Caps", cursive, Arial;
+.rammetto-one-regular {
+  font-family: "Rammetto One", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-
 
 .navbar {
     display: flex;
@@ -14,29 +13,42 @@
     padding: 5px 20px;
     justify-content: space-between;
     align-items: center;
-    font-family: "macondo swash caps";
+    font-family: "Rammetto One";
+        margin-top: 1em;
+
 }
 
 #nav-header {
-    color: rgb(173, 52, 83);
-    size: 1em !important;
+  color: rgb(214, 10, 61);
+   font-size: 2vw;
     margin: 0;
     font-weight: bold;
+        text-shadow: 0px 10px 8px lightgrey;
+
 }
 
 #nav-header:hover {
     color: rgb(48, 153, 174);
 }
 
-.nav-links {
-    padding: 10px;
-  background-color: rgb(173, 52, 83);
+#myBag, #myEvents, #hosts, #signOut {
+padding: .5vw;
+  /* background-image: linear-gradient(to right, #d60a3d,  #e25310, #f3d10e); */
+ /* background image = no hoover? we sure? */
+  background-color: rgb(214, 10, 61) ;
   color: white;
-  border-radius: 30px;
+  border-radius: 25px;
   border: none;
-  margin: 15px 0;
+  margin: .5vw;
+    font-size: 2vw;
+
 }
 
-.nav-links:hover {
-    color: rgb(48, 153, 174);
-}
+#myBag:hover, #myEvents:hover, #hosts:hover, #signOut:hover {
+    background-color: rgb(48, 153, 174);
+
+    
+/* .nav-links:active {
+    box-shadow:  0px 10px 8px lightgrey;
+} 
+Make Id active? */

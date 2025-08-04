@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+   <link rel="stylesheet" href="/stylesheets/style.css" />
 
     <title>
         <%= user.username %>'s Bag
@@ -14,20 +14,21 @@
     <%- include('../partials/_navbar.ejs') %>
         <div class="all-items-body">
 
-            <div class="all-items-header">
+            <div class="views-header">
 
                 <h1>Look at all the magical things in your bag, <%= user.username %>!</h1>
-                <button type="submit"><a href="/users/<%=user._id%>/items/new">Add item</a></button>
+                <button  class=button type="submit"><a class=button href="/users/<%=user._id%>/items/new">Add item</a></button>
             </div>
-            <ul>
+
+            <div class="all-items">
+          
                 <% catalog.forEach(item=>{ %>
-                    <li>
-                        <a href="/users/<%= user._id %>/items/<%= item._id %>">
+                        <a  class="individual-item" href="/users/<%= user._id %>/items/<%= item._id %>">
                             <%= item.name %>
                         </a>
-                    </li>
                     <% }) %>
-            </ul>
+                
+            </div>
 
         </div>
 </body>

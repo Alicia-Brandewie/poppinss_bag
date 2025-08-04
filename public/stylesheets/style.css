@@ -37,10 +37,12 @@ h1, h2, h3, h4 {
 }
 
 /* -------------------- Index --------------------*/
-.text-container {
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+      align-items: center;
+
 }
 
 .main-header {
@@ -54,7 +56,7 @@ h1, h2, h3, h4 {
 
 .sub-header {
   margin: 50px;
-  font-size: 2vw;
+  font-size: 3vw;
   color: rgb(226, 83, 16);
   text-align: center;
     text-shadow: 0px 10px 8px lightgrey;
@@ -67,6 +69,7 @@ h1, h2, h3, h4 {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+
 }
 
 .auth-links {
@@ -83,7 +86,13 @@ h1, h2, h3, h4 {
   border-radius: 25px;
   width: 10em;
   text-align: center;
-  background-color: rgb(243, 209, 14)
+  margin: 1vw;
+  background-color: rgb(243, 209, 14);
+    border: none;
+    justify-content: space-between;
+      font-weight: bold;
+
+
 }
 
 .button-link:hover {
@@ -121,6 +130,10 @@ form {
   margin: 20px 20px 60px 20px;
 }
 
+label {
+  font-size: 3vw;
+}
+
 input {
   padding: 12px;
   border-radius: 30px;
@@ -134,7 +147,14 @@ input {
   border-radius: 30px;
   border: none;
   margin: 15px 0;
-  font-size: 2vw;
+  font-size: 3vw;
+  font-weight: bold;
+}
+
+.form-textarea {
+ padding: 12px;
+  border-radius: 30px;
+  border-color: white;
 }
 
 .form-button:hover {
@@ -148,33 +168,62 @@ input {
 
 /* -------------------- Views_display-catalog --------------------*/
 
-.all-items-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.views-header {
+     display: flex;
+  font-weight: bold;
+  font-size: 2vw;
+  color:rgb(226, 83, 16);
+  text-align: center;
+  text-shadow: 0px 10px 5px lightgrey;
+    margin: 1em;
+    align-items: center;
+        justify-content: space-between;
 }
 
-.all-items-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  width: 90%;
-  color:  rgb(173, 52, 83);
+.button{
+  font-size: 3vw;
+  border-radius: 25px;
+  width: 9em;
+  height: 2em;
+  text-align: center;
+  background-color: rgb(226, 83, 16);
+    border: none;
+    color:white;
+      font-weight: bold;
+
 }
 
-.add-item-link {
-  padding: 10px;
-  background-color: rgb(173, 52, 83);
+.button:hover {
+  background-color: rgb(10, 171, 192);
+}
+
+/* .button:active {
+    box-shadow:  0px 10px 8px lightgrey;
+}  */
+
+.all-items {
+     display: flex;
+  font-weight: bold;
+  font-size: 3vw;
+  text-align: center;
+  text-shadow: 0px 10px 5px lightgrey;
+    margin: 1em;
+    align-items: center;
+        justify-content: space-between;
+}
+
+.individual-item {
+    padding: 10px;
+  /* background-image: linear-gradient(to right, #d60a3d,  #e25310, #f3d10e); */
+ /* background image = no hoover? we sure? */
+  background-color: rgb(243, 209, 14) ;
   color: white;
-  border-radius: 30px;
+  border-radius: 25px;
   border: none;
-  font-size: 1.1em;
-  padding: 2px 25px;
-  text-decoration: none;
+    font-size: 2vw;
+ padding: 1vw;
 }
 
-.add-item-link:hover {
-  background-color: #e84a6c;
+.individual-item:hover {
+  background-color: rgb(10, 171, 192);
+}
