@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,26 +11,23 @@
 </head>
 
 <body>
-        <%- include('../partials/_navbar.ejs') %>
-<div class="views-header">
-        <p>Chim chimany, chim charoo! You've got things to do, <%= user.username %>!</p>
-        <a class=add href="/users/<%=user._id%>/events/new">Add event</a>
+    <%- include('../partials/_navbar.ejs') %>
+        <div class="views-header">
+            <p>Chim chimany, chim charoo! You've got things to do, <%= user.username %>!</p>
+            <a class=add href="/users/<%=user._id%>/events/new">Add event</a>
 
-</div>
+        </div>
 
 
-            <div class="all-items">
-                    <% calendar.forEach(event=>{ %>
-                
-                    <a class="individual-item" href="/users/<%= user._id %>/events/<%= event._id %>">
-                        <%= event.name %>
-                    </a>
-<!-- <p>Location: <#%= addedEvent.location %></p> -->
+        <div class="all-items">
+            <% calendar.forEach(event=>{ %>
 
-        <!-- <p>Date: <#%= addedEvent.date %></p> -->
+                <a class="individual-item" href="/users/<%= user._id %>/events/<%= event._id %>">
+                    <%= event.name %>
+                </a>
+            
                 <% }) %>
-            </div>
-
+        </div>
 
 </body>
 

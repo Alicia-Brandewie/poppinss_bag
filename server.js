@@ -32,7 +32,7 @@ mongoose.connection.on("connected", () => {
 });
 
 /*-------------------- Dependencies ---------------------*/
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(morgan('dev'));
 
@@ -50,30 +50,22 @@ app.use(
 );
 
 app.use(passUserToView);
-app.use("/auth", authController); 
+app.use("/auth", authController);
 app.use('/users/:usersId/items', isSignedIn, itemsController);
 app.use('/users/:usersId/events', isSignedIn, eventsController);
 app.use('/allUsers', isSignedIn, allUsersController);
 
 
 /*-------------------- Routes ---------------------*/
- //GET_landing page
+//GET_landing page
 
 app.get("/", async (req, res) => {
-    // console.log("I am also here");
   if (req.session.user) {
     res.redirect(`/users/${req.session.user._id}/items`);
   } else {
-    // console.log("I am here");
     res.render("index.ejs");
   }
 });
-
-
-// app.get("/new", async (req,res) => {
-//     res.render("new.ejs", { user: req.session.user, })   
-// });
-
 
 /*-------------------- Port ---------------------*/
 app.listen(port, () => {

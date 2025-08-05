@@ -52,32 +52,30 @@ router.get('/:itemId', async (req, res) => {
     }
 });
 
-
 //GET_item to edit
 router.get('/:catalogId/edit', async (req, res) => {
     try {
-        const currentUser = await User.findById(req.session.user._id); //find current user
-        const catalog = currentUser.catalog.id(req.params.catalogId);//find clicked item//
+        const currentUser = await User.findById(req.session.user._id);
+        const catalog = currentUser.catalog.id(req.params.catalogId);
         res.render('items/edit.ejs', {
             addedItem: catalog,
-        });       
+        });
     } catch (error) {
         console.log(error);
         res.redirect('/');
     }
 });
 
-
-
 /*-------------------- UPDATE _ Router logic ---------------------*/
+
 // //PUT_edited item into DB
 router.put('/:catalogId', async (req, res) => {
     try {
-        const currentUser = await User.findById(req.session.user._id); //find current user
-        const catalog = currentUser.catalog.id(req.params.catalogId);//find clicked item//
+        const currentUser = await User.findById(req.session.user._id);
+        const catalog = currentUser.catalog.id(req.params.catalogId);
         catalog.set(req.body);
-        await currentUser.save();        //send change//
-        res.redirect(`/users/${currentUser._id}/items/${req.params.catalogId}`        
+        await currentUser.save();
+        res.redirect(`/users/${currentUser._id}/items/${req.params.catalogId}`
         );
     } catch (error) {
         console.log(error);
@@ -85,21 +83,19 @@ router.put('/:catalogId', async (req, res) => {
     }
 });
 
-
 /*-------------------- DELETE _ Router logic ---------------------*/
 
 //DELETE_remove addedItem
-
-router.delete('/:catalogId' , async(req,res) => {
+router.delete('/:catalogId', async (req, res) => {
     try {
-        const currentUser = await User.findById(req.session.user._id); 
-            //find current user from req.session
+        const currentUser = await User.findById(req.session.user._id);
+        //find current user from req.session
         currentUser.catalog = currentUser.catalog.filter(item => item._id.toString() !== req.params.catalogId);
-            //use .deleteOne() via id supplied by req.params
-    await currentUser.save(); 
+        //use .deleteOne() via id supplied by req.params
+        await currentUser.save();
         //save changes to the user
-        res.redirect(`/users/${currentUser._id}/items`);    
-            //redirect to the index view
+        res.redirect(`/users/${currentUser._id}/items`);
+        //redirect to the index view
     } catch (error) { //if any errors...
         console.log(error);
         res.redirect('/');
@@ -107,4 +103,5 @@ router.delete('/:catalogId' , async(req,res) => {
 });
 
 /*-------------------- Module ---------------------*/
+
 module.exports = router;

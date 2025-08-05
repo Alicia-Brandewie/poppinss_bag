@@ -11,16 +11,19 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
 
-    <div class="views-header"><p><%= selectedUser.username%>'s Bag</p></div>
-
-    <div class="allUsers-all-items">
-        <% selectedUser.catalog.forEach(item =>{ %>
-            <p class="allUsers-individual-item">
-                <%= item.name %>
+        <div class="views-header">
+            <p>
+                <%= selectedUser.username%>'s Bag
             </p>
-        <% }) %>
-    </div>
+        </div>
 
-
+        <div class="allUsers-all-items">
+            <% selectedUser.catalog.forEach(item=>{ %>
+                <p class="allUsers-individual-item">
+                    <%= item.name %>
+                </p>
+                <% }) %>
+        </div>
 </body>
+
 </html>

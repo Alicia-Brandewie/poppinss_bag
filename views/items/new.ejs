@@ -4,39 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title> Add item  </title>
+    <title> Add item </title>
 </head>
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    
-    <div class="container">
 
-        <div class="sub-header">
-            <p> Add a new item to your bag here</p>
+        <div class="container">
+
+            <div class="sub-header">
+                <p> Add a new item to your bag here</p>
+            </div>
+
+            <div class="form-container">
+
+                <form class="form" action="/users/<%= user._id %>/items" method="POST">
+
+                    <label class=label for="item">Name*:</label>
+                    <input type="text" name="name" id="name" />
+
+                    <label class=label for="location">Location*: </label>
+                    <input type="text" name="location" id="location" />
+
+                    <label class=label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" id="quantity" />
+
+                    <label class=label for="notes">Notes: </label>
+                    <textarea class="form-textarea" name="notes" id="notes"></textarea>
+
+                    <button class="form-button" type="submit">Add</button>
+
+                </form>
+            </div>
         </div>
-        
-        <div class="form-container">
-
-            <form class="form" action="/users/<%= user._id %>/items" method="POST">
-
-            <label class=label for="item">Name*:</label>
-            <input type="text" name="name" id="name" />
-
-            <label class=label  for="location">Location*: </label>
-            <input type="text" name="location" id="location" />
-
-            <label class=label  for="quantity">Quantity:</label>
-            <input type="number" name="quantity" id="quantity" />
-
-            <label class=label for="notes">Notes: </label>
-            <textarea class="form-textarea" name="notes" id="notes"></textarea>
-
-            <button class="form-button" type="submit">Add</button>
-            
-            </form>
-        </div>
-    </div>
 
 </body>
 

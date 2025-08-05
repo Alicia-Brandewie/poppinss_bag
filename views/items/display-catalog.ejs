@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 
     <title>
         <%= user.username %>'s Bag
@@ -13,23 +13,21 @@
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
-        <!-- <div class="all-items-body"> -->
 
-            <div class="views-header">
+        <div class="views-header">
 
-                <p>Explore the scrumdiddlyumptious things in your bag, <%= user.username %>!</p>
-                <a class=add href="/users/<%=user._id%>/items/new">Add item</a>
-            </div>
+            <p>Explore the scrumdiddlyumptious things in your bag, <%= user.username %>!</p>
+            <a class=add href="/users/<%=user._id%>/items/new">Add item</a>
+        </div>
 
-            <div class="all-items">
-                <% catalog.forEach(item=>{ %>
-                        <a  class="individual-item" href="/users/<%= user._id %>/items/<%= item._id %>">
-                            <%= item.name %>
-                        </a>
-                    <% }) %>
-            </div>
+        <div class="all-items">
+            <% catalog.forEach(item=>{ %>
+                <a class="individual-item" href="/users/<%= user._id %>/items/<%= item._id %>">
+                    <%= item.name %>
+                </a>
+                <% }) %>
+        </div>
 
-        <!-- </div> -->
 </body>
 
 </html>

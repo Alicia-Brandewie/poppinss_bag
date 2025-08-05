@@ -7,51 +7,46 @@
 }
 
 .navbar {
-    display: flex;
-    flex-direction: row;
-    max-width: 100vw;
-    padding: 5px 20px;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Rammetto One";
-        margin-top: 2vw;
-
+  display: flex;
+  flex-direction: row;
+  max-width: 100vw;
+  padding: 5px 20px;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Rammetto One";
+  margin-top: 2vw;
 }
 
 #nav-header {
   color: rgb(214, 10, 61);
-   font-size: 2vw;
-    margin: 0;
-    font-weight: bold;
-        text-shadow: 0px 10px 8px lightgrey;
-
+  font-size: 2vw;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 0px 10px 8px lightgrey;
 }
 
 #nav-header:hover {
-    color: rgb(48, 153, 174);
+  color: rgb(48, 153, 174);
 }
 
-#myBag, #myEvents, #hosts, #signOut {
-padding: .5vw;
+#myBag,
+#myEvents,
+#hosts,
+#signOut {
+  padding: .5vw;
   /* background-image: linear-gradient(to right, #d60a3d,  #e25310, #f3d10e); */
- /* background image = no hoover? we sure? */
-  background-color: rgb(214, 10, 61) ;
+  /* background image = no hoover? we sure? */
+  background-color: rgb(214, 10, 61);
   color: white;
   border-radius: 3vw;
   border: none;
   margin: .5vw;
-    font-size: vw;
+  font-size: vw;
 }
 
-#myBag:hover, #myEvents:hover, #hosts:hover, #signOut:hover {
-    background-color: rgb(48, 153, 174);
+#myBag:hover,
+#myEvents:hover,
+#hosts:hover,
+#signOut:hover {
+  background-color: rgb(48, 153, 174);
 }
-
-/* #myBag:active, #myEvents:active, #hosts:actie, #signOut:active {  
-  box-shadow: 0px 10px 8px lightgrey;
-} */
-
-/* .nav-links:active {
-    box-shadow:  0px 10px 8px lightgrey;
-} 
-Make Id active? */

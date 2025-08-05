@@ -4,6 +4,7 @@ const router = express.Router();
 const User = require('../models/user.js');
 
 // ---------------------- CREATE ---------------------//
+
 //POST_ new event
 router.post('/', async (req, res) => {
     try {
@@ -22,46 +23,22 @@ router.post('/', async (req, res) => {
 // ---------------------- READ ---------------------//
 
 //GET_calendar
-router.get("/", async (req,res) => { // using single / because base route for this controller 
+router.get("/", async (req, res) => {
     try {
-    const currentUser = await User.findById(req.session.user._id);
-    res.render("events/calendar.ejs", {
-        calendar: currentUser.calendar,
-    });
+        const currentUser = await User.findById(req.session.user._id);
+        res.render("events/calendar.ejs", {
+            calendar: currentUser.calendar,
+        });
     } catch (error) {
-    console.log(error);
-    res.redirect('/');
+        console.log(error);
+        res.redirect('/');
     }
 });
 
-
-
-// router.get("/calendar", async (req,res) => {
-//     const currentUser = await User.findById(req.session.user._id);
-//     res.render("events/calendar.ejs");
-// });
-
-
-
 //GET_ new event
-
 router.get('/new', async (req, res) => {
-        res.render('events/new.ejs');
-})
-
-// router.get('/new', async (req, res) => {
-//     try {
-//             const currentUser = await User.findById(req.session.user._id);
-//             console.log(currentUser);
-//                 res.render('events/new.ejs', {catalog:currentUser.catalog})
-//     } catch (error) {
-//             console.log(error);
-//             res.redirect('/');
-//     }        
-// });
-// ^Glen helped; I'd over engineered it
-    //PIN IN IT until fully passing project 2, then stretch stretch for it
-
+    res.render('events/new.ejs');
+});
 
 //GET_to show-event.ejs
 router.get('/:eventId', async (req, res) => {
@@ -77,15 +54,14 @@ router.get('/:eventId', async (req, res) => {
     }
 });
 
-
 //GET_event to edit
 router.get('/:calendarId/edit', async (req, res) => {
     try {
-        const currentUser = await User.findById(req.session.user._id); //find current user
-        const calendar = currentUser.calendar.id(req.params.calendarId);//find clicked item//
+        const currentUser = await User.findById(req.session.user._id);
+        const calendar = currentUser.calendar.id(req.params.calendarId);
         res.render('events/edit.ejs', {
             addedEvent: calendar,
-        });       
+        });
     } catch (error) {
         console.log(error);
         res.redirect('/');
@@ -94,14 +70,14 @@ router.get('/:calendarId/edit', async (req, res) => {
 
 // ---------------------- UPDATE ---------------------//
 
-// //PUT_edited event into DB
+//PUT_edited event into DB
 router.put('/:calendarId', async (req, res) => {
     try {
-        const currentUser = await User.findById(req.session.user._id); //find current user
-        const calendar = currentUser.calendar.id(req.params.calendarId);//find clicked item//
+        const currentUser = await User.findById(req.session.user._id);
+        const calendar = currentUser.calendar.id(req.params.calendarId);
         calendar.set(req.body);
-        await currentUser.save();        //send change//
-        res.redirect(`/users/${currentUser._id}/events/${req.params.calendarId}`        
+        await currentUser.save();
+        res.redirect(`/users/${currentUser._id}/events/${req.params.calendarId}`
         );
     } catch (error) {
         console.log(error);
@@ -112,21 +88,18 @@ router.put('/:calendarId', async (req, res) => {
 // ---------------------- DELETE ---------------------//
 
 //DELETE_remove addedItem
-
-router.delete('/:calendarId' , async(req,res) => {
+router.delete('/:calendarId', async (req, res) => {
     try {
-        const currentUser = await User.findById(req.session.user._id); 
-            //find current user from req.session
+        const currentUser = await User.findById(req.session.user._id);
         currentUser.calendar = currentUser.calendar.filter(event => event._id.toString() !== req.params.calendarId);
-            //use .deleteOne() via id supplied by req.params
-    await currentUser.save(); 
-        //save changes to the user
-        res.redirect(`/users/${currentUser._id}/events`);    
-            //redirect to the index view
-    } catch (error) { //if any errors...
+        await currentUser.save();
+        res.redirect(`/users/${currentUser._id}/events`);
+    } catch (error) {
         console.log(error);
         res.redirect('/');
     }
 });
+
 /*-------------------- Module ---------------------*/
+
 module.exports = router;

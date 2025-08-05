@@ -4,7 +4,7 @@
 
     <%if (user){%>
         <div class="navbar">
-                <a id="nav-header" href="/">Poppins's Bag</a>
+            <a id="nav-header" href="/">Poppins's Bag</a>
 
             <div class="nav-links">
                 <a id=myBag href="/users/<%=user._id%>/items">My Bag</a>
@@ -16,9 +16,10 @@
 
         <% } else {%>
             <div class="navbar">
-                    <a href="/auth/sign-in">Sign in</a>
-                    <a href="/auth/sign-up">Sign up</a>
-                
+                <a href="/auth/sign-in">Sign in</a>
+                <a href="/auth/sign-up">Sign up</a>
+
             </div>
             <%}%>
+            
 </nav>

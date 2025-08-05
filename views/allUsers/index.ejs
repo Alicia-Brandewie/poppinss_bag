@@ -4,23 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Hosts</title>
 </head>
-<body>
-            <%- include('../partials/_navbar.ejs') %>
-   <div class="views-header">
-    <p> In every job that must be done, there is an element of fun. 
-        You find the fun, and - SNAP - the job's a game! And you found the fun: our other hosts!</p>
-   </div>
 
-<div class="all-items">
-    <% users.forEach(user =>{ %>
-        <a class="individual-item" href="/allUsers/display-catalog/<%= user._id %>">
-        <%= user.username %>
-        </a>
-   <% }); %>
-</div>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+        <div class="views-header">
+            <p> In every job that must be done, there is an element of fun.
+                You find the fun, and - SNAP - the job's a game! And you found the fun: our other hosts!</p>
+        </div>
+
+        <div class="all-items">
+            <% users.forEach(user=>{ %>
+                <a class="individual-item" href="/allUsers/display-catalog/<%= user._id %>">
+                    <%= user.username %>
+                </a>
+                <% }); %>
+        </div>
 </body>
 
 </html>

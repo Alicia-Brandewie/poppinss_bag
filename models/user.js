@@ -34,12 +34,10 @@ const eventsSchema = new mongoose.Schema({
   theme: {
     type: String,
   },
-    items: {
+  items: {
     type: String,
-   // enum: [catalog.forEach(item => {
-     // "/users/user._id/items/item._id.item.name"});}
     required: true,
-    },
+  },
   cohost: {
     type: String,
   },

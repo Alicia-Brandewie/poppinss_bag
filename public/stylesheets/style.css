@@ -1,33 +1,12 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Modak&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
 
-
-/* .modak-regular {
-  font-family: "Modak", system-ui;
-  font-weight: 100;
-  font-style: normal;
-} */
-
-/* .lemon-regular {
-  font-family: "Lemon", serif;
-  font-weight: 400;
-  font-style: normal;
-} */
-
-/* .macondo-swash-caps-regular {
-  font-family: "Macondo Swash Caps", cursive, Arial;
-  font-weight: 400;
-  font-style: normal;
-} */
 .rammetto-one-regular {
   font-family: "Rammetto One", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-Body {
+body {
   font-family: Arial;
   background-color: white;
 }
@@ -61,7 +40,6 @@ Body {
   text-shadow: 0px 10px 8px lightgrey;
 }
 
-
 .button-link {
   display: flex;
   flex-direction: column;
@@ -82,7 +60,7 @@ Body {
 }
 
 #in,
-#up, 
+#up,
 #edit {
   color: white;
   font-size: 3vw;
@@ -97,7 +75,7 @@ Body {
   font-weight: bold;
 }
 
-/* -------------------- auth_ sign-in, sign-up --------------------*/
+/* -------------------- auth_ sign-in, auth_sign-up, items_new, events_new--------------------*/
 .container {
   display: flex;
   flex-direction: column;
@@ -161,7 +139,7 @@ input {
   padding: 1vw;
   border-radius: 3vw;
   border-color: white;
-    margin: 0 0 1vw 0;
+  margin: 0 0 1vw 0;
 }
 
 .form-button:hover {
@@ -172,15 +150,14 @@ input {
   box-shadow: 8px 10px 8px antiquewhite;
 }
 
-
 /* -------------------- items_display-catalog, events_calendar, allUsers_index --------------------*/
 
 .views-header {
   display: flex;
   font-weight: bold;
-font-family: "Rammetto One";
+  font-family: "Rammetto One";
   font-size: 3vw;
-    color: rgb(226, 83, 16);
+  color: rgb(226, 83, 16);
   text-align: center;
   text-shadow: 0px 10px 5px lightgrey;
   margin: 1vw 2vw;
@@ -206,8 +183,8 @@ font-family: "Rammetto One";
 }
 
 .add:active {
-    box-shadow:  0px 10px 8px lightgrey;
-} 
+  box-shadow: 0px 10px 8px lightgrey;
+}
 
 .all-items {
   display: flex;
@@ -224,8 +201,6 @@ font-family: "Rammetto One";
 
 .individual-item {
   padding: 10px;
-  /* background-image: linear-gradient(to right, #d60a3d,  #e25310, #f3d10e); */
-  /* background image = no hoover? we sure? */
   background-color: rgb(243, 209, 14);
   color: white;
   border-radius: 25px;
@@ -240,18 +215,15 @@ font-family: "Rammetto One";
 }
 
 .individual-item:active {
-    box-shadow:  0px 10px 8px lightgrey;
-} 
+  box-shadow: 0px 10px 8px lightgrey;
+}
 
-
-
-/* -------------------- _show-event--------------------*/
+/* --------------------items_show-item, events_show-event--------------------*/
 
 .form-dupe {
   display: flex;
   flex-direction: column;
   width: 30vw;
-  /* height: 100%; */
   background-color: rgb(243, 209, 14);
   justify-content: space-evenly;
   padding: 02vw 2vw;
@@ -262,7 +234,7 @@ font-family: "Rammetto One";
   margin: 1vw 1vw;
 }
 
-/* -------------------- Views/allUsers/index.ejs--------------------*/
+/* -------------------- allUsers_index.ejs--------------------*/
 
 .allUsers-all-items {
   display: flex;
@@ -270,7 +242,6 @@ font-family: "Rammetto One";
   font-weight: bold;
   font-size: 3vw;
   text-align: center;
-  /* text-shadow: 0px 10px 5px lightgrey; */
   margin: 1em;
   align-content: space-between;
   justify-content: center;
@@ -279,8 +250,6 @@ font-family: "Rammetto One";
 
 .allUsers-individual-item {
   padding: 10px;
-  /* background-image: linear-gradient(to right, #d60a3d,  #e25310, #f3d10e); */
-  /* background image = no hoover? we sure? */
   background-color: rgb(243, 209, 14);
   color: white;
   border-radius: 25px;

@@ -4,50 +4,55 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>    
-        <%= addedEvent.name %>  
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>
+        <%= addedEvent.name %>
     </title>
 </head>
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
 
-    <div class="container">
+        <div class="container">
 
-        <div class="sub-header">
-            <p><%= addedEvent.name %></p>
+            <div class="sub-header">
+                <p>
+                    <%= addedEvent.name %>
+                </p>
+            </div>
+
+            <div class="form-dupe">
+
+                <p>Location: <%= addedEvent.location %>
+                </p>
+
+                <p>Date: <%= addedEvent.date %>
+                </p>
+
+                <% if (addedEvent.theme) { %>
+                    <p>Theme: <%= addedEvent.theme %>
+                    </p>
+                    <% } %>
+
+                        <p>Items <%= addedEvent.items %>
+                        </p>
+
+                        <% if (addedEvent.guests) { %>
+                            <p>Guest list: <%= addedEvent.guests %>
+                            </p>
+                            <% } %>
+
+                                <% if (addedEvent.notes) { %>
+                                    <p>Notes: <%= addedEvent.notes %>
+                                    </p>
+                                    <% } %>
+
+            </div>
+
+            <a class=form-button id=edit href="/users/<%= user._id %>/events/<%= addedEvent._id %>/edit">
+                Edit this event</a>
+
         </div>
-
-        <!-- <div class="form-container"> -->
-
-    <div class="form-dupe">
-
-        <p>Location: <%= addedEvent.location %></p>
-
-        <p>Date: <%= addedEvent.date %></p>
-
-        <% if (addedEvent.theme) { %>
-        <p>Theme: <%= addedEvent.theme %></p>
-        <% } %>
-
-        <p>Items <%= addedEvent.items %></p>
-
-        <% if (addedEvent.guests) { %>
-        <p>Guest list: <%= addedEvent.guests %></p>
-        <% } %>
-
-        <% if (addedEvent.notes) { %>
-        <p>Notes: <%= addedEvent.notes %></p>
-        <% } %>
-
-    </div>
-
-    <a class=form-button id=edit href="/users/<%= user._id %>/events/<%= addedEvent._id %>/edit">
-        Edit this event</a> 
-
-       <!-- </div> -->
-    </div>
 </body>
 
 </html>

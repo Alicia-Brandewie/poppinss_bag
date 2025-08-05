@@ -2,48 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>    
-        <%= addedItem.name %>  
-    </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>
+    <%= addedItem.name %>
+  </title>
 </head>
 
 <body>
-    <%- include('../partials/_navbar.ejs') %>
+  <%- include('../partials/_navbar.ejs') %>
 
-  <div class="container">
-    
-    <div class="sub-header">
-    <p><%= addedItem.name %></p>
+    <div class="container">
+
+      <div class="sub-header">
+        <p>
+          <%= addedItem.name %>
+        </p>
+      </div>
+
+      <div class="form-dupe">
+
+        <p>Location: <%= addedItem.location %>
+        </p>
+
+        <% if (addedItem.quantity) { %>
+          <p>Quantity: <%= addedItem.quantity %>
+          </p>
+          <% } %>
+
+            <% if (addedItem.notes) { %>
+              <p>Notes: <%= addedItem.notes %>
+              </p>
+              <% } %>
+      </div>
+
+      <a id="edit" href="/users/<%= user._id %>/items/<%= addedItem._id %>/edit">
+        Edit this item
+      </a>
+
     </div>
-
-    <div class="form-dupe">
-
-      <p>Location: <%= addedItem.location %></p>
-
-      <% if (addedItem.quantity) { %>
-      <p>Quantity: <%= addedItem.quantity %></p>
-      <% } %>
-
-      <% if (addedItem.notes) { %>
-        <p>Notes: <%= addedItem.notes %></p>
-      <% } %>
-    </div>
-
-
-        <!-- <form action="/users/<%= user._id %>/items/<%= addedItem._id %>?_method=DELETE"
-        method="POST">
-          <button  type="submit">Delete this item</button>
-        </form> -->
-          
-          <a id="edit" href="/users/<%= user._id %>/items/<%= addedItem._id %>/edit">
-        Edit this item 
-          </a>
-
-</div>
-        
 
 </body>
 
