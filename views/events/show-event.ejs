@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,18 +9,19 @@
         <%= addedEvent.name %>  
     </title>
 </head>
+
 <body>
     <%- include('../partials/_navbar.ejs') %>
 
-  <div class="container">
+    <div class="container">
 
-            <div class="sub-header">
-        <p><%= addedEvent.name %></p>
-                </div>
+        <div class="sub-header">
+            <p><%= addedEvent.name %></p>
+        </div>
 
         <!-- <div class="form-container"> -->
 
-            <div class="form-dupe">
+    <div class="form-dupe">
 
         <p>Location: <%= addedEvent.location %></p>
 
@@ -39,13 +41,13 @@
         <p>Notes: <%= addedEvent.notes %></p>
         <% } %>
 
-                    </div>
+    </div>
 
-          <a class=button-link id=edit href="/users/<%= user._id %>/events/<%= addedEvent._id %>/edit">
+    <a class=form-button id=edit href="/users/<%= user._id %>/events/<%= addedEvent._id %>/edit">
         Edit this event</a> 
 
-        <!-- </div> -->
-          </div>
+       <!-- </div> -->
+    </div>
 </body>
 
 </html>

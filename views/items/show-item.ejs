@@ -1,37 +1,48 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="/stylesheets/items.css" />
+   <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>    
         <%= addedItem.name %>  
     </title>
 </head>
+
 <body>
     <%- include('../partials/_navbar.ejs') %>
 
-        <h1><%= addedItem.name %></h1>
+  <div class="container">
+    
+    <div class="sub-header">
+    <p><%= addedItem.name %></p>
+    </div>
 
-        <p>Location: <%= addedItem.location %></p>
+    <div class="form-dupe">
 
-        <% if (addedItem.quantity) { %>
-        <p>Quantity: <%= addedItem.quantity %></p>
-        <% } %>
+      <p>Location: <%= addedItem.location %></p>
 
-         <% if (addedItem.notes) { %>
+      <% if (addedItem.quantity) { %>
+      <p>Quantity: <%= addedItem.quantity %></p>
+      <% } %>
+
+      <% if (addedItem.notes) { %>
         <p>Notes: <%= addedItem.notes %></p>
-        <% } %>
-        
-        <form action="/users/<%= user._id %>/items/<%= addedItem._id %>?_method=DELETE"
+      <% } %>
+    </div>
+
+
+        <!-- <form action="/users/<%= user._id %>/items/<%= addedItem._id %>?_method=DELETE"
         method="POST">
           <button  type="submit">Delete this item</button>
-        </form>
+        </form> -->
           
-          <a href="/users/<%= user._id %>/items/<%= addedItem._id %>/edit">
-        <p>Edit this item</p> 
-        </a>
+          <a id="edit" href="/users/<%= user._id %>/items/<%= addedItem._id %>/edit">
+        Edit this item 
+          </a>
 
+</div>
         
 
 </body>

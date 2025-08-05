@@ -8,17 +8,17 @@
 </head>
 
 <body>
-        <%- include('../partials/_navbar.ejs') %>
+    <%- include('../partials/_navbar.ejs') %>
+    
+    <div class="container">
 
-                <div class="container">
-
-            <div class="sub-header">
-
-        <p> Add a new item to your bag here</p>
-</div>
+        <div class="sub-header">
+            <p> Add a new item to your bag here</p>
+        </div>
+        
         <div class="form-container">
 
-         <form class="form" action="/users/<%= user._id %>/items" method="POST">
+            <form class="form" action="/users/<%= user._id %>/items" method="POST">
 
             <label class=label for="item">Name*:</label>
             <input type="text" name="name" id="name" />
@@ -33,9 +33,10 @@
             <textarea class="form-textarea" name="notes" id="notes"></textarea>
 
             <button class="form-button" type="submit">Add</button>
-         </form>
-         </div>
-         </div>
+            
+            </form>
+        </div>
+    </div>
 
 </body>
 

@@ -12,7 +12,7 @@
 <body>
         <%- include('../partials/_navbar.ejs') %>
 <div class="views-header">
-        <p>Look at all the scrumdiddlyumptious  events on your calendar, <%= user.username %>!</p>
+        <p>Chim chimany, chim charoo! You've got things to do, <%= user.username %>!</p>
         <a class=add href="/users/<%=user._id%>/events/new">Add event</a>
 
 </div>
@@ -24,7 +24,9 @@
                     <a class="individual-item" href="/users/<%= user._id %>/events/<%= event._id %>">
                         <%= event.name %>
                     </a>
-                
+<!-- <p>Location: <#%= addedEvent.location %></p> -->
+
+        <!-- <p>Date: <#%= addedEvent.date %></p> -->
                 <% }) %>
             </div>
 

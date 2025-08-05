@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -5,30 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
 
-    <title>   Edit item
-        <%= addedItem.name %>  
+    <title> Edit
+        <%= addedItem.name %>
     </title>
 </head>
+
 <body>
-        <%- include('../partials/_navbar.ejs') %>
+    <%- include('../partials/_navbar.ejs') %>
 
-        <form action="/users/<%= user._id %>/items/<%= addedItem._id %>?_method=PUT" method="POST">
+        <div class="sub-header">
+            <p>Spit spot, things have changed! Edit <%= addedItem.name %>
+            </p>
+        </div>
 
-        <h1>Edit <%= addedItem.name %></h1>
+        <div class="container">
 
-        <p>Location: <%= addedItem.location %></p>
+            <form action="/users/<%= user._id %>/items/<%= addedItem._id %>?_method=PUT" method="POST">
 
-        <% if (addedItem.quantity) { %>
-        <p>Quantity: <%= addedItem.quantity %></p>
-        <% } %>
+                <label class=label for="item">Name*:</label>
+                <input type="text" name="name" id="name" value="<%= addedItem.name %>" />
 
-         <% if (addedItem.notes) { %>
-        <p>Notes: <%= addedItem.notes %></p>
-        <% } %>
+                <label class=label for="location">Location*: </label>
+                <input type="text" name="location" id="location" value="<%= addedItem.location %>" />
 
-        <button type ="submit">Update item</button>
-        </form>
+                <label class=label for="quantity">Quantity:</label>
+                <input type="number" name="quantity" id="quantity" value="<%= addedItem.quantity %>" />
 
+                <label class=label for="notes">Notes: </label>
+                <textarea class="form-textarea" name="notes" id="notes" value="<%= addedItem.notes %>"></textarea>
+
+                <button class="form-button" type="submit">Save changes</button>
+            </form>
+
+            <form action="/users/<%= user._id %>/items/<%= addedItem._id %>?_method=DELETE" method="POST">
+                <button class="form-button" type="submit">Delete this item</button>
+            </form>
+
+
+        </div>
 </body>
 
 </html>

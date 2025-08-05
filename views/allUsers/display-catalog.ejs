@@ -10,14 +10,16 @@
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1> Explore <%= selectedUser.username%>'s Bag</h1>
-    <ul>
+
+    <div class="views-header"><p><%= selectedUser.username%>'s Bag</p></div>
+
+    <div class="allUsers-all-items">
         <% selectedUser.catalog.forEach(item =>{ %>
-            <li>
+            <p class="allUsers-individual-item">
                 <%= item.name %>
-            </li>
+            </p>
         <% }) %>
-    </ul>
+    </div>
 
 
 </body>

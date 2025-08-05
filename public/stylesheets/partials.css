@@ -41,7 +41,6 @@ padding: .5vw;
   border: none;
   margin: .5vw;
     font-size: vw;
-
 }
 
 #myBag:hover, #myEvents:hover, #hosts:hover, #signOut:hover {

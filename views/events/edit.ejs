@@ -1,48 +1,56 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  <title>   Edit event
-        <%= addedEvent.name %>  
-    </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>  Edit 
+    <%= addedEvent.name %>
+  </title>
 </head>
-        <%- include('../partials/_navbar.ejs') %>
 
+<body>
+  <%- include('../partials/_navbar.ejs') %>
 
- <form action="/users/<%= user._id %>/events/<%= addedEvent._id %>?_method=PUT" method="POST">
-                <button type ="submit">Update event</button>
+  <div class="sub-header">
+    <p>Spit spot, things have changed! Edit <%= addedEvent.name %></p>
+  </div>
 
-<h1>Edit <%= addedEvent.name %></h1>
+    <div class="container">
 
-        <p>name: <%= addedEvent.name%></p>
+      <form action="/users/<%= user._id %>/events/<%= addedEvent._id %>?_method=PUT" method="POST">
 
-        <p>Location: <%= addedEvent.location %></p>
+        <label for="name">Name*:</label>
+        <input type="text" name="name" id="name" value="<%= addedEvent.name%>" required />
 
-        <p>Date: <%= addedEvent.date %></p>
+        <label for="location">Location*: </label>
+        <input type="text" name="location" id="location" value="<%= addedEvent.location %>" required />
 
-        <% if (addedEvent.theme) { %>
-        <p>Theme: <%= addedEvent.theme %></p>
-        <% } %>
+        <label for="date">Date*:</label>
+        <input type="text" name="date" id="date" value="<%= addedEvent.date %>" required />
 
-        <p>Items <%= addedEvent.items %></p>
+        <label for="theme">Theme: </label>
+        <input type="text" name="theme" id="theme" value="<%= addedEvent.theme %>" />
 
-        <% if (addedEvent.guests) { %>
-        <p>Guest list: <%= addedEvent.guests %></p>
-        <% } %>
+        <label for="guests">Guests' names: </label>
+        <input type="text" name="guests" id="guests" value="<%= addedEvent.guests %>" />
 
-        <% if (addedEvent.notes) { %>
-        <p>Notes: <%= addedEvent.notes %></p>
-        <% } %>
+        <label for="items">Items*: </label>
+        <textarea class="form-textarea" name="items" id="items" value="<%= addedEvent.items %>"></textarea>
 
-        
-        </form>
+        <label for="notes">Notes: </label>
+        <textarea class="form-textarea" name="notes" id="notes" value="<%= addedEvent.notes %>"></textarea>
 
-        <form action="/users/<%= user._id %>/events/<%= addedEvent._id %>?_method=DELETE"
-        method="POST">
-          <button  type="submit">Delete this event</button>
-        </form>
+        <button class="form-button" type="submit">Save changes</button>
+
+      </form>
+
+      <form action="/users/<%= user._id %>/events/<%= addedEvent._id %>?_method=DELETE" method="POST">
+        <button class="form-button" type="submit">Delete this event</button>
+      </form>
+
+    </div>
 
 </body>
 
