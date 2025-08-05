@@ -9,28 +9,30 @@
 </head>
 
 <body>
-  <div class="text-container">
+  <div class="index-container">
 
     <div class="main-header">
-      <h1>Create an account!</h1>
+      <p>Create an account!</p>
     </div>
 
     <div class="sub-header">
-      <h2>Supercalifragilisticexpialidocious--you found the right place to stash all of your things!</h2>
+      <p>Supercalifragilisticexpialidocious--you found the right place to stash all of your things!</p>
     </div>
 
-    <div class="index-container">
+    <form class="form" action="/auth/sign-up" method="post">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" />
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" name="confirmPassword" id="confirmPassword" />
+      <button class="form-button" type="submit">Sign up</button>
+    </form>
 
-      <form class="form" action="/auth/sign-up" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" />
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" />
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" />
-        <button class="form-button" type="submit">Sign up</button>
-      </form>
-    </div>
+    <a href="/"><img class="logo-external"
+        src="https://raw.githubusercontent.com/Alicia-Brandewie/poppinss_bag/refs/heads/main/logo.jpg"
+        alt="Poppins's Bag logo: handbag shape made of red, orange, yellow horizontal stripes with a small teal bowtie">
+    </a>
 
   </div>
 </body>

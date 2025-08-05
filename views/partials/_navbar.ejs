@@ -4,7 +4,13 @@
 
     <%if (user){%>
         <div class="navbar">
-            <a id="nav-header" href="/">Poppins's Bag</a>
+            <div class="navbar-left">
+                <a href="/"><img id="logo-navbar"
+                        src="https://raw.githubusercontent.com/Alicia-Brandewie/poppinss_bag/refs/heads/main/logo.jpg"
+                        alt="Poppins's Bag logo: handbag shape made of red, orange, yellow horizontal stripes with a small teal bowtie" />
+                </a>
+                <a id="nav-header" href="/">Poppins's Bag</a>
+            </div>
 
             <div class="nav-links">
                 <a id=myBag href="/users/<%=user._id%>/items">My Bag</a>
@@ -21,5 +27,5 @@
 
             </div>
             <%}%>
-            
+
 </nav>

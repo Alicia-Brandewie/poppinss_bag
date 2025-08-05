@@ -17,16 +17,34 @@
   margin-top: 2vw;
 }
 
+#logo-navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 3vw;
+  margin: .5vw;
+}
+
+
 #nav-header {
+  display: flex;
   color: rgb(214, 10, 61);
   font-size: 2vw;
-  margin: 0;
+  margin: .5vw;
   font-weight: bold;
   text-shadow: 0px 10px 8px lightgrey;
+/* align-items: stretch; */
+  align-content: center;
+
 }
 
 #nav-header:hover {
   color: rgb(48, 153, 174);
+}
+
+.navbar-left {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
 }
 
 #myBag,
@@ -41,7 +59,7 @@
   border-radius: 3vw;
   border: none;
   margin: .5vw;
-  font-size: vw;
+  font-size: 1.5vw;
 }
 
 #myBag:hover,
