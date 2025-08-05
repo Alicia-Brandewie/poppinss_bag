@@ -11,6 +11,10 @@ https://generalassembly.instructure.com/courses/821/pages/men-stack-embedding-re
             https://www.w3schools.com/tags/att_select_required.asp
     Glen helped me when I got turned around, "lost in the sauce", over enginered this
 
+styling: 
+    https://www.w3schools.com/howto/howto_custom_select.asp
+    https://www.w3schools.com/css/tryit.asp?filename=trycss_form_select
+
 
 ### Navbar styling
 https://www.w3schools.com/css/css3_gradients.asp

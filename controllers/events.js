@@ -12,8 +12,6 @@ router.post('/', async (req, res) => {
         currentUser.calendar.push(req.body);
         await currentUser.save();
         res.redirect(`/users/${currentUser._id}/events`);
-        // res.redirect("events/calendar.ejs", {
-        // calendar: currentUser.calendar,
     } catch (error) {
         console.log(error);
         res.redirect('/');
