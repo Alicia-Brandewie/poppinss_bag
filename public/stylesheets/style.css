@@ -26,7 +26,7 @@ body {
   font-weight: bold;
   font-size: 4vw;
   margin: 1vw;
-  color: rgb(214, 10, 61);
+  color: #d60a3d;
   text-align: center;
   text-shadow: 0px 10px 5px lightgrey;
 }
@@ -35,7 +35,7 @@ body {
   font-family: "Rammetto One";
   margin: 1vw;
   font-size: 3vw;
-  color: rgb(226, 83, 16);
+  color: #e25310;
   text-align: center;
   text-shadow: 0px 10px 8px lightgrey;
 }
@@ -51,7 +51,7 @@ body {
 #in:hover,
 #up:hover,
 #edit:hover {
-  background-color: rgb(10, 171, 192);
+  background-color: #0aabc0;
 }
 
 #in:active,
@@ -69,7 +69,7 @@ body {
   width: 10em;
   text-align: center;
   margin: 3vw;
-  background-color: rgb(243, 209, 14);
+  background-color: #f3d10e;
   border: none;
   justify-content: space-between;
   font-weight: bold;
@@ -121,6 +121,32 @@ input {
   font-size: 1.8vw;
 }
 
+select {
+  width: 100%;
+    font-size: 1.8vw;
+  padding: 1vw;
+  border: none;
+  border-radius: 1vw;
+  background-color: white;
+  
+}
+
+.form-textarea {
+  padding: 1vw;
+  border-radius: 3vw;
+  border-color: white;
+  margin: 0 0 1vw 0;
+  font-family: arial;
+}
+
+.form-button:hover {
+  background-color: rgb(37, 172, 191);
+}
+
+.form-button:active {
+  box-shadow: 8px 10px 8px antiquewhite;
+}
+
 .form-button {
   background-color: white;
   color: black;
@@ -134,22 +160,6 @@ input {
   align-self: center;
   margin: 1vw 0 0 0;
 }
-
-.form-textarea {
-  padding: 1vw;
-  border-radius: 3vw;
-  border-color: white;
-  margin: 0 0 1vw 0;
-}
-
-.form-button:hover {
-  background-color: rgb(37, 172, 191);
-}
-
-.form-button:active {
-  box-shadow: 8px 10px 8px antiquewhite;
-}
-
 /* -------------------- items_display-catalog, events_calendar, allUsers_index --------------------*/
 
 .views-header {

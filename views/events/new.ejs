@@ -13,39 +13,47 @@
         <div class="container">
 
             <div class="sub-header">
-            <p>A spoonful of sugar makes everything go down! Add a new event to your calendar here</p>
+                <p>A spoonful of sugar makes everything go down! Add a new event to your calendar here</p>
             </div>
 
             <div class="form-container">
-    
-            <form class="form" action="/users/<%= user._id %>/events" method="POST">
 
-            <label for="name">Name*:</label>
-            <input type="text" name="name" id="name" required />
+                <form class="form" action="/users/<%= user._id %>/events" method="POST">
 
-            <label for="location">Location*: </label>
-            <input type="text" name="location" id="location" required />
+                    <label for="name">Name*:</label>
+                    <input type="text" name="name" id="name" required />
 
-            <label for="date">Date*:</label>
-            <input type="text" name="date" id="date" required />
+                    <label for="location">Location*: </label>
+                    <input type="text" name="location" id="location" required />
 
-            <label for="theme">Theme: </label>
-            <input type="text" name="theme" id="theme" />
+                    <label for="date">Date*:</label>
+                    <input type="text" name="date" id="date" required />
 
-            <label for="guests">Guests' names: </label>
-            <input type="text" name="guests" id="guests" />
+                    <label for="theme">Theme: </label>
+                    <input type="text" name="theme" id="theme" />
 
-            <label for="items">Items*: </label>
-            <textarea class="form-textarea" name="items" id="items"></textarea>
-      
-            <label for="notes">Notes: </label>
-            <textarea class="form-textarea" name="notes" id="notes"></textarea>
+                    <label for="guests">Guests' names: </label>
+                    <input type="text" name="guests" id="guests" />
 
-            <button class="form-button" type="submit">Add</button>
-        </form>
+                    <label for="items">Items: </label>
+                    <select name="items" id="items">
+                        <% catalog.forEach(item=>{ %>
+                            <option value="<%= item.name %>">
+                                <%= item.name %>
+                            </option>
+                            <% }); %>
+                    </select>
 
-        </div>    
-    </div>
+                    <!-- <textarea class="form-textarea" name="items" id="items"></textarea> -->
+
+                    <label for="notes">Notes: </label>
+                    <textarea class="form-textarea" name="notes" id="notes"></textarea>
+
+                    <button class="form-button" type="submit">Add</button>
+                </form>
+
+            </div>
+        </div>
 </body>
 
 </html>

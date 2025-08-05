@@ -36,9 +36,20 @@ router.get("/", async (req, res) => {
 });
 
 //GET_ new event
+// router.get('/new', async (req, res) => {
+//     res.render('events/new.ejs');
+// });
 router.get('/new', async (req, res) => {
-    res.render('events/new.ejs');
+    try {
+            const currentUser = await User.findById(req.session.user._id);
+            console.log(currentUser);
+                res.render('events/new.ejs', {catalog:currentUser.catalog})
+    } catch (error) {
+            console.log(error);
+            res.redirect('/');
+    }
 });
+
 
 //GET_to show-event.ejs
 router.get('/:eventId', async (req, res) => {

@@ -34,14 +34,13 @@ const eventsSchema = new mongoose.Schema({
   theme: {
     type: String,
   },
-  items: {
-    type: String,
-    required: true,
-  },
   cohost: {
     type: String,
   },
   guests: {
+    type: String,
+  },
+items: {
     type: String,
   },
   notes: {

@@ -34,18 +34,20 @@
                     </p>
                     <% } %>
 
-                        <p>Items <%= addedEvent.items %>
-                        </p>
-
-                        <% if (addedEvent.guests) { %>
-                            <p>Guest list: <%= addedEvent.guests %>
+                        <% if (addedEvent.items) { %>
+                            <p>Items: <%= addedEvent.items %>
                             </p>
                             <% } %>
 
-                                <% if (addedEvent.notes) { %>
-                                    <p>Notes: <%= addedEvent.notes %>
+                                <% if (addedEvent.guests) { %>
+                                    <p>Guest list: <%= addedEvent.guests %>
                                     </p>
                                     <% } %>
+
+                                        <% if (addedEvent.notes) { %>
+                                            <p>Notes: <%= addedEvent.notes %>
+                                            </p>
+                                            <% } %>
 
             </div>
 
