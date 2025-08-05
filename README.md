@@ -1,3 +1,5 @@
+![](/home/alicia/code/ga/projects/poppinss_bag/Poppings's Bag title with logo.jpg)
+
 ## Attributions
 ### Items dropdown in Events form
 https://generalassembly.instructure.com/courses/821/pages/men-stack-embedding-related-data-skyrockit?module_item_id=75350
