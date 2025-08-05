@@ -33,10 +33,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-//GET_ new event
-// router.get('/new', async (req, res) => {
-//     res.render('events/new.ejs');
-// });
 router.get('/new', async (req, res) => {
     try {
             const currentUser = await User.findById(req.session.user._id);
@@ -47,7 +43,6 @@ router.get('/new', async (req, res) => {
             res.redirect('/');
     }
 });
-
 
 //GET_to show-event.ejs
 router.get('/:eventId', async (req, res) => {
