@@ -19,3 +19,14 @@ styling:
 ### Navbar styling
 https://www.w3schools.com/css/css3_gradients.asp
 https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient
+
+
+### gradiant hover
+https://stackoverflow.com/questions/63980211/transition-effect-not-working-on-hover-with-linear-gradient-to-bottom
+https://jsfiddle.net/Richardinho/qv4z2pua/ 
+
+### hyperlinking logo
+https://stackoverflow.com/questions/117667/hyperlinking-an-image-using-css
+
+###logo 
+ChatGPT + editing myself 

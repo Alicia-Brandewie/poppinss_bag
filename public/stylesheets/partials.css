@@ -24,7 +24,6 @@
   margin: .5vw;
 }
 
-
 #nav-header {
   display: flex;
   color: rgb(214, 10, 61);
@@ -52,8 +51,6 @@
 #hosts,
 #signOut {
   padding: .5vw;
-  /* background-image: linear-gradient(to right, #d60a3d,  #e25310, #f3d10e); */
-  /* background image = no hoover? we sure? */
   background-color: rgb(214, 10, 61);
   color: white;
   border-radius: 3vw;
@@ -66,5 +63,13 @@
 #myEvents:hover,
 #hosts:hover,
 #signOut:hover {
-  background-color: rgb(48, 153, 174);
+  background-image: linear-gradient(135deg,rgb(214, 10, 61)5%, #0aabc0);
+}
+
+#myBag:active,
+#myEvents:active,
+#hosts:active,
+#signOut:active,
+#logo-navbar:active {
+  box-shadow: 0px 10px 8px lightgrey;
 }

@@ -15,7 +15,7 @@ router.post('/sign-up', async (req, res) => {
     }
 
     if (req.body.password !== req.body.confirmPassword) {
-        return res.send("Password and confirm Password must match");
+        return res.send("Password and confirm password must match");
     }
 
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
